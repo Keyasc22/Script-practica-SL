@@ -1,0 +1,26 @@
+1- Crear un grupo llamado casa.
+
+	Iniciamos en modo root.
+	 su -
+  Creamos el Grupo casa
+	 groupadd casa
+	Para verificar usaremos el comando:
+	 cat /etc/group
+   
+2- Crear 2 usuarios dentro del grupo:
+
+	Primero podemos crear los usuarios.
+	 useradd Jose
+	 useradd Keiry
+	Ahora debemos añadir los usuarios al grupo casa
+	 adduser Jose casa
+	 adduser Keiry casa
+	Para verificar si los usuarios se agregaron al grupo podemos hacerlo de dos formas:
+	Forma 1
+	 cut -d: -f4,4 /etc/passwd
+	Forma 2
+	 groups Jose
+	 groups Keiry
+   
+3.Cambiar el nombre del grupo de casa a Familia
+ 	 groupmod -g 1013 -n Familia casa
